@@ -1,0 +1,39 @@
+{
+  "title": "Scala 之旅",
+  "description": "Scala 基础入门",
+  "language": "zh-hans",
+  "links": {
+    "sidebar": {
+      "博客": "https://blog.luckypeng.com",
+      "知乎": "https://www.zhihu.com/people/coalchan"
+    }
+  },
+  "plugins": [
+    "github",
+    "cnzz",
+    "splitter",
+    "sitemap",
+    "page-footer-ex",
+    "theme-comscore",
+    "anchors"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/coalchan/Tour-of-Scala/"
+    },
+    "cnzz": {
+      "visible": true,
+      "style": "0",
+      "siteid": "1277827682"
+    },
+    "sitemap": {
+      "hostname": "https://tour-of-scala.luckypeng.com/"
+    },
+    "page-footer-ex": {
+      "copyright": "[![知识共享许可协议](https://licensebuttons.net/l/by-sa/3.0/80x15.png)](https://creativecommons.org/licenses/by-sa/3.0/) BY [小鹏](http://www.luckypeng.com/)",
+      "markdown": true,
+      "update_label": "此页面修订于 ",
+      "update_format": "YYYY-MM-DD HH:mm:ss"
+    }
+  }
+}
