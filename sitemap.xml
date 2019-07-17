@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url> <loc>https://tour-of-scala.luckypeng.com/./</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/tour-of-scala.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/basics.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/unified-types.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/classes.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/traits.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/mixin-class-composition.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/higher-order-functions.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/nested-method.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/multiple-parameter-lists.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/case-classes.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/pattern-matching.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/singleton-objects.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/regular-expression-patterns.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/extractor-objects.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/for-comprehensions.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/generic-classes.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/variances.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/upper-type-bounds.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/lower-type-bounds.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/inner-classes.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/abstract-types.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/compound-types.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/self-types.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/implicit-parameters.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/implicit-conversions.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/polymorphic-methods.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/type-inference.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/operators.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/by-name-parameters.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/annotations.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/default-parameter-values.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/named-arguments.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://tour-of-scala.luckypeng.com/packages-and-imports.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+</urlset>

@@ -1,0 +1,778 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4. 类 · Scala 之旅</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="traits.html" />
+    
+    
+    <link rel="prev" href="unified-types.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://blog.luckypeng.com" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.zhihu.com/people/coalchan" target="_blank" class="custom-link">知乎</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    本书介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="tour-of-scala.html">
+            
+                <a href="tour-of-scala.html">
+            
+                    
+                    1. 导言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="basics.html">
+            
+                <a href="basics.html">
+            
+                    
+                    2. 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="unified-types.html">
+            
+                <a href="unified-types.html">
+            
+                    
+                    3. 统一类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="classes.html">
+            
+                <a href="classes.html">
+            
+                    
+                    4. 类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="traits.html">
+            
+                <a href="traits.html">
+            
+                    
+                    5. 特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="mixin-class-composition.html">
+            
+                <a href="mixin-class-composition.html">
+            
+                    
+                    6. 通过混入（mixin）来组合类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="higher-order-functions.html">
+            
+                <a href="higher-order-functions.html">
+            
+                    
+                    7. 高阶函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="nested-method.html">
+            
+                <a href="nested-method.html">
+            
+                    
+                    8. 嵌套方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="multiple-parameter-lists.html">
+            
+                <a href="multiple-parameter-lists.html">
+            
+                    
+                    9. 多参数列表（柯里化）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="case-classes.html">
+            
+                <a href="case-classes.html">
+            
+                    
+                    10. 样例类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="pattern-matching.html">
+            
+                <a href="pattern-matching.html">
+            
+                    
+                    11. 模式匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="singleton-objects.html">
+            
+                <a href="singleton-objects.html">
+            
+                    
+                    12. 单例对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="regular-expression-patterns.html">
+            
+                <a href="regular-expression-patterns.html">
+            
+                    
+                    13. 正则表达式模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="extractor-objects.html">
+            
+                <a href="extractor-objects.html">
+            
+                    
+                    14. 提取器对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="for-comprehensions.html">
+            
+                <a href="for-comprehensions.html">
+            
+                    
+                    15. For 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="generic-classes.html">
+            
+                <a href="generic-classes.html">
+            
+                    
+                    16. 泛型类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="variances.html">
+            
+                <a href="variances.html">
+            
+                    
+                    17. 型变
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="upper-type-bounds.html">
+            
+                <a href="upper-type-bounds.html">
+            
+                    
+                    18. 类型上界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="lower-type-bounds.html">
+            
+                <a href="lower-type-bounds.html">
+            
+                    
+                    19. 类型下界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="inner-classes.html">
+            
+                <a href="inner-classes.html">
+            
+                    
+                    20. 内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="abstract-types.html">
+            
+                <a href="abstract-types.html">
+            
+                    
+                    21. 抽象类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="compound-types.html">
+            
+                <a href="compound-types.html">
+            
+                    
+                    22. 复合类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="self-types.html">
+            
+                <a href="self-types.html">
+            
+                    
+                    23. 自类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="implicit-parameters.html">
+            
+                <a href="implicit-parameters.html">
+            
+                    
+                    24. 隐式参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="implicit-conversions.html">
+            
+                <a href="implicit-conversions.html">
+            
+                    
+                    25. 隐式转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="polymorphic-methods.html">
+            
+                <a href="polymorphic-methods.html">
+            
+                    
+                    26. 多态方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="type-inference.html">
+            
+                <a href="type-inference.html">
+            
+                    
+                    27. 类型推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    28. 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="by-name-parameters.html">
+            
+                <a href="by-name-parameters.html">
+            
+                    
+                    29. 传名参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="annotations.html">
+            
+                <a href="annotations.html">
+            
+                    
+                    30. 注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="default-parameter-values.html">
+            
+                <a href="default-parameter-values.html">
+            
+                    
+                    31. 默认参数值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="named-arguments.html">
+            
+                <a href="named-arguments.html">
+            
+                    
+                    32. 命名参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="packages-and-imports.html">
+            
+                <a href="packages-and-imports.html">
+            
+                    
+                    33. 包和导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >4. 类</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7C7B;"><a name="&#x7C7B;" class="plugin-anchor" href="#&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;</h1>
+<p>Scala &#x4E2D;&#x7684;&#x7C7B;&#x662F;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x84DD;&#x56FE;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x65B9;&#x6CD5;&#x3001;&#x5E38;&#x91CF;&#x3001;&#x53D8;&#x91CF;&#x3001;&#x7C7B;&#x578B;&#x3001;&#x5BF9;&#x8C61;&#x3001;&#x7279;&#x8D28;&#x3001;&#x7C7B;&#xFF0C;&#x8FD9;&#x4E9B;&#x7EDF;&#x79F0;&#x4E3A;&#x6210;&#x5458;&#x3002;&#x7C7B;&#x578B;&#x3001;&#x5BF9;&#x8C61;&#x548C;&#x7279;&#x8D28;&#x5C06;&#x5728;&#x540E;&#x9762;&#x7684;&#x6587;&#x7AE0;&#x4E2D;&#x4ECB;&#x7ECD;&#x3002;</p>
+<h2 id="&#x7C7B;&#x5B9A;&#x4E49;"><a name="&#x7C7B;&#x5B9A;&#x4E49;" class="plugin-anchor" href="#&#x7C7B;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x5B9A;&#x4E49;</h2>
+<p>&#x4E00;&#x4E2A;&#x6700;&#x7B80;&#x7684;&#x7C7B;&#x7684;&#x5B9A;&#x4E49;&#x5C31;&#x662F;&#x5173;&#x952E;&#x5B57; <code>class</code> +&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x7C7B;&#x540D;&#x5FC5;&#x987B;&#x662F;&#x5927;&#x5199;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span></span>
+
+<span class="hljs-keyword">val</span> user1 = <span class="hljs-keyword">new</span> <span class="hljs-type">User</span>
+</code></pre>
+<p>&#x5173;&#x952E;&#x5B57; <code>new</code> &#x88AB;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002; <code>User</code> &#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x56E0;&#x800C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x4E0D;&#x63A5;&#x53D7;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x5668;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x4F60;&#x901A;&#x5E38;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x5668;&#x548C;&#x7C7B;&#x4F53;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x7C7B;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>(<span class="hljs-params">var x: <span class="hljs-type">Int</span>, var y: <span class="hljs-type">Int</span></span>) </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">move</span></span>(dx: <span class="hljs-type">Int</span>, dy: <span class="hljs-type">Int</span>): <span class="hljs-type">Unit</span> = {
+    x = x + dx
+    y = y + dy
+  }
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">toString</span></span>: <span class="hljs-type">String</span> =
+    <span class="hljs-string">s&quot;(<span class="hljs-subst">$x</span>, <span class="hljs-subst">$y</span>)&quot;</span>
+}
+
+<span class="hljs-keyword">val</span> point1 = <span class="hljs-keyword">new</span> <span class="hljs-type">Point</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+point1.x  <span class="hljs-comment">// 2</span>
+println(point1)  <span class="hljs-comment">// prints (2, 3)</span>
+</code></pre>
+<p><code>Point</code> &#x7C7B;&#x6709;4&#x4E2A;&#x6210;&#x5458;&#xFF1A;&#x53D8;&#x91CF; <code>x</code> &#x548C; <code>y</code> &#xFF0C;&#x65B9;&#x6CD5; <code>move</code> &#x548C; <code>toString</code> &#x3002;&#x4E0E;&#x8BB8;&#x591A;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E0D;&#x540C;&#xFF0C;&#x4E3B;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x5728;&#x7C7B;&#x7684;&#x7B7E;&#x540D;&#x4E2D; <code>(var x: Int, var y: Int)</code> &#x3002; <code>move</code> &#x65B9;&#x6CD5;&#x63A5;&#x53D7;2&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x65E0;&#x4EFB;&#x4F55;&#x610F;&#x4E49;&#x7684; <code>Unit</code> &#x7C7B;&#x578B;&#x503C; <code>()</code> &#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x4E0E; Java &#x8FD9;&#x7C7B;&#x8BED;&#x8A00;&#x4E2D;&#x7684; <code>void</code> &#x76F8;&#x5F53;&#x3002;&#x53E6;&#x5916;&#xFF0C; <code>toString</code> &#x65B9;&#x6CD5;&#x4E0D;&#x63A5;&#x53D7;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x4F46;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>String</code> &#x503C;&#x3002;&#x56E0;&#x4E3A; <code>toString</code> &#x8986;&#x76D6;&#x4E86;<a href="unified-types.html"><code>AnyRef</code></a>&#x4E2D;&#x7684; <code>toString</code> &#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x7528;&#x4E86; <code>override</code> &#x5173;&#x952E;&#x5B57;&#x6807;&#x8BB0;&#x3002;</p>
+<h2 id="&#x6784;&#x9020;&#x5668;"><a name="&#x6784;&#x9020;&#x5668;" class="plugin-anchor" href="#&#x6784;&#x9020;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6784;&#x9020;&#x5668;</h2>
+<p>&#x6784;&#x9020;&#x5668;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x503C;&#x6765;&#x62E5;&#x6709;&#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>(<span class="hljs-params">var x: <span class="hljs-type">Int</span> = 0, var y: <span class="hljs-type">Int</span> = 0</span>)</span>
+
+<span class="hljs-keyword">val</span> origin = <span class="hljs-keyword">new</span> <span class="hljs-type">Point</span>  <span class="hljs-comment">// x and y are both set to 0</span>
+<span class="hljs-keyword">val</span> point1 = <span class="hljs-keyword">new</span> <span class="hljs-type">Point</span>(<span class="hljs-number">1</span>)
+println(point1.x)  <span class="hljs-comment">// prints 1</span>
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x7684; <code>Point</code> &#x7C7B;&#x4E2D;&#xFF0C; <code>x</code> &#x548C; <code>y</code> &#x62E5;&#x6709;&#x9ED8;&#x8BA4;&#x503C; <code>0</code> &#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x5FC5;&#x4F20;&#x53C2;&#x6570;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x56E0;&#x4E3A;&#x6784;&#x9020;&#x5668;&#x662F;&#x4ECE;&#x5DE6;&#x5F80;&#x53F3;&#x8BFB;&#x53D6;&#x53C2;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x4EC5;&#x4EC5;&#x8981;&#x4F20;&#x4E2A; <code>y</code> &#x7684;&#x503C;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5E26;&#x540D;&#x4F20;&#x53C2;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>(<span class="hljs-params">var x: <span class="hljs-type">Int</span> = 0, var y: <span class="hljs-type">Int</span> = 0</span>)</span>
+<span class="hljs-keyword">val</span> point2 = <span class="hljs-keyword">new</span> <span class="hljs-type">Point</span>(y=<span class="hljs-number">2</span>)
+println(point2.y)  <span class="hljs-comment">// prints 2</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x7684;&#x505A;&#x6CD5;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#x6709;&#x5229;&#x4E8E;&#x4F7F;&#x5F97;&#x8868;&#x8FBE;&#x660E;&#x786E;&#x65E0;&#x8BEF;&#x3002;</p>
+<h2 id="&#x79C1;&#x6709;&#x6210;&#x5458;&#x548C;-gettersetter-&#x8BED;&#x6CD5;"><a name="&#x79C1;&#x6709;&#x6210;&#x5458;&#x548C;-gettersetter-&#x8BED;&#x6CD5;" class="plugin-anchor" href="#&#x79C1;&#x6709;&#x6210;&#x5458;&#x548C;-gettersetter-&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x79C1;&#x6709;&#x6210;&#x5458;&#x548C; Getter/Setter &#x8BED;&#x6CD5;</h2>
+<p>&#x6210;&#x5458;&#x9ED8;&#x8BA4;&#x662F;&#x516C;&#x6709;&#xFF08; <code>public</code> &#xFF09;&#x7684;&#x3002;&#x4F7F;&#x7528; <code>private</code> &#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x53EF;&#x4EE5;&#x5728;&#x51FD;&#x6570;&#x5916;&#x90E8;&#x9690;&#x85CF;&#x5B83;&#x4EEC;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _x = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _y = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> bound = <span class="hljs-number">100</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">x</span> </span>= _x
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">x_=</span> </span>(newValue: <span class="hljs-type">Int</span>): <span class="hljs-type">Unit</span> = {
+    <span class="hljs-keyword">if</span> (newValue &lt; bound) _x = newValue <span class="hljs-keyword">else</span> printWarning
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">y</span> </span>= _y
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">y_=</span> </span>(newValue: <span class="hljs-type">Int</span>): <span class="hljs-type">Unit</span> = {
+    <span class="hljs-keyword">if</span> (newValue &lt; bound) _y = newValue <span class="hljs-keyword">else</span> printWarning
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printWarning</span> </span>= println(<span class="hljs-string">&quot;WARNING: Out of bounds&quot;</span>)
+}
+
+<span class="hljs-keyword">val</span> point1 = <span class="hljs-keyword">new</span> <span class="hljs-type">Point</span>
+point1.x = <span class="hljs-number">99</span>
+point1.y = <span class="hljs-number">101</span> <span class="hljs-comment">// prints the warning</span>
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x7684; <code>Point</code> &#x7C7B;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x5B58;&#x5728;&#x79C1;&#x6709;&#x53D8;&#x91CF; <code>_x</code> &#x548C; <code>_y</code> &#x4E2D;&#x3002; <code>def x</code> &#x548C; <code>def y</code> &#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x79C1;&#x6709;&#x6570;&#x636E;&#x3002; <code>def x_=</code> &#x548C; <code>def y_=</code> &#x662F;&#x4E3A;&#x4E86;&#x9A8C;&#x8BC1;&#x548C;&#x7ED9; <code>_x</code> &#x548C; <code>_y</code> &#x8D4B;&#x503C;&#x3002;&#x6CE8;&#x610F;&#x4E0B;&#x5BF9;&#x4E8E; setter &#x65B9;&#x6CD5;&#x7684;&#x7279;&#x6B8A;&#x8BED;&#x6CD5;&#xFF1A;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5728; getter &#x65B9;&#x6CD5;&#x7684;&#x540E;&#x9762;&#x52A0;&#x4E0A; <code>_=</code> &#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x7740;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4E3B;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E2D;&#x5E26;&#x6709; <code>val</code> &#x548C; <code>var</code> &#x7684;&#x53C2;&#x6570;&#x65F6;&#x516C;&#x6709;&#x7684;&#x3002;&#x7136;&#x800C;&#x7531;&#x4E8E; <code>val</code> &#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x53BB;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>(<span class="hljs-params">val x: <span class="hljs-type">Int</span>, val y: <span class="hljs-type">Int</span></span>)</span>
+<span class="hljs-keyword">val</span> point = <span class="hljs-keyword">new</span> <span class="hljs-type">Point</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+point.x = <span class="hljs-number">3</span>  <span class="hljs-comment">// &lt;-- does not compile</span>
+</code></pre>
+<p>&#x4E0D;&#x5E26; <code>val</code> &#x6216; <code>var</code> &#x7684;&#x53C2;&#x6570;&#x662F;&#x79C1;&#x6709;&#x7684;&#xFF0C;&#x4EC5;&#x5728;&#x7C7B;&#x4E2D;&#x53EF;&#x89C1;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>(<span class="hljs-params">x: <span class="hljs-type">Int</span>, y: <span class="hljs-type">Int</span></span>)</span>
+<span class="hljs-keyword">val</span> point = <span class="hljs-keyword">new</span> <span class="hljs-type">Point</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+point.x  <span class="hljs-comment">// &lt;-- does not compile</span>
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank"><img src="https://licensebuttons.net/l/by-sa/3.0/80x15.png" alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;"></a> BY <a href="http://www.luckypeng.com/" target="_blank">&#x5C0F;&#x9E4F;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;  2019-07-17 14:21:56 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="unified-types.html" class="navigation navigation-prev " aria-label="Previous page: 3. 统一类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="traits.html" class="navigation navigation-next " aria-label="Next page: 5. 特质">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4. 类","level":"1.5","depth":1,"next":{"title":"5. 特质","level":"1.6","depth":1,"path":"traits.md","ref":"traits.md","articles":[]},"previous":{"title":"3. 统一类型","level":"1.4","depth":1,"path":"unified-types.md","ref":"unified-types.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","cnzz","splitter","sitemap","page-footer-ex","theme-comscore","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/coalchan/Tour-of-Scala/"},"page-footer-ex":{"copyright":"[![知识共享许可协议](https://licensebuttons.net/l/by-sa/3.0/80x15.png)](https://creativecommons.org/licenses/by-sa/3.0/) BY [小鹏](http://www.luckypeng.com/)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于 "},"splitter":{},"search":{},"cnzz":{"style":"0","visible":true,"siteid":"1277827682"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://tour-of-scala.luckypeng.com/"},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala 之旅","language":"zh-hans","links":{"sidebar":{"博客":"https://blog.luckypeng.com","知乎":"https://www.zhihu.com/people/coalchan"}},"gitbook":"*","description":"Scala 基础入门"},"file":{"path":"classes.md","mtime":"2019-07-17T06:21:56.441Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T08:03:28.371Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-cnzz/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

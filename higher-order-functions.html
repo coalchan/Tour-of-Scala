@@ -1,0 +1,774 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7. 高阶函数 · Scala 之旅</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="nested-method.html" />
+    
+    
+    <link rel="prev" href="mixin-class-composition.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://blog.luckypeng.com" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.zhihu.com/people/coalchan" target="_blank" class="custom-link">知乎</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    本书介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="tour-of-scala.html">
+            
+                <a href="tour-of-scala.html">
+            
+                    
+                    1. 导言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="basics.html">
+            
+                <a href="basics.html">
+            
+                    
+                    2. 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="unified-types.html">
+            
+                <a href="unified-types.html">
+            
+                    
+                    3. 统一类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="classes.html">
+            
+                <a href="classes.html">
+            
+                    
+                    4. 类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="traits.html">
+            
+                <a href="traits.html">
+            
+                    
+                    5. 特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="mixin-class-composition.html">
+            
+                <a href="mixin-class-composition.html">
+            
+                    
+                    6. 通过混入（mixin）来组合类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="higher-order-functions.html">
+            
+                <a href="higher-order-functions.html">
+            
+                    
+                    7. 高阶函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="nested-method.html">
+            
+                <a href="nested-method.html">
+            
+                    
+                    8. 嵌套方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="multiple-parameter-lists.html">
+            
+                <a href="multiple-parameter-lists.html">
+            
+                    
+                    9. 多参数列表（柯里化）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="case-classes.html">
+            
+                <a href="case-classes.html">
+            
+                    
+                    10. 样例类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="pattern-matching.html">
+            
+                <a href="pattern-matching.html">
+            
+                    
+                    11. 模式匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="singleton-objects.html">
+            
+                <a href="singleton-objects.html">
+            
+                    
+                    12. 单例对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="regular-expression-patterns.html">
+            
+                <a href="regular-expression-patterns.html">
+            
+                    
+                    13. 正则表达式模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="extractor-objects.html">
+            
+                <a href="extractor-objects.html">
+            
+                    
+                    14. 提取器对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="for-comprehensions.html">
+            
+                <a href="for-comprehensions.html">
+            
+                    
+                    15. For 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="generic-classes.html">
+            
+                <a href="generic-classes.html">
+            
+                    
+                    16. 泛型类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="variances.html">
+            
+                <a href="variances.html">
+            
+                    
+                    17. 型变
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="upper-type-bounds.html">
+            
+                <a href="upper-type-bounds.html">
+            
+                    
+                    18. 类型上界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="lower-type-bounds.html">
+            
+                <a href="lower-type-bounds.html">
+            
+                    
+                    19. 类型下界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="inner-classes.html">
+            
+                <a href="inner-classes.html">
+            
+                    
+                    20. 内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="abstract-types.html">
+            
+                <a href="abstract-types.html">
+            
+                    
+                    21. 抽象类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="compound-types.html">
+            
+                <a href="compound-types.html">
+            
+                    
+                    22. 复合类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="self-types.html">
+            
+                <a href="self-types.html">
+            
+                    
+                    23. 自类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="implicit-parameters.html">
+            
+                <a href="implicit-parameters.html">
+            
+                    
+                    24. 隐式参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="implicit-conversions.html">
+            
+                <a href="implicit-conversions.html">
+            
+                    
+                    25. 隐式转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="polymorphic-methods.html">
+            
+                <a href="polymorphic-methods.html">
+            
+                    
+                    26. 多态方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="type-inference.html">
+            
+                <a href="type-inference.html">
+            
+                    
+                    27. 类型推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    28. 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="by-name-parameters.html">
+            
+                <a href="by-name-parameters.html">
+            
+                    
+                    29. 传名参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="annotations.html">
+            
+                <a href="annotations.html">
+            
+                    
+                    30. 注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="default-parameter-values.html">
+            
+                <a href="default-parameter-values.html">
+            
+                    
+                    31. 默认参数值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="named-arguments.html">
+            
+                <a href="named-arguments.html">
+            
+                    
+                    32. 命名参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="packages-and-imports.html">
+            
+                <a href="packages-and-imports.html">
+            
+                    
+                    33. 包和导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >7. 高阶函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9AD8;&#x9636;&#x51FD;&#x6570;"><a name="&#x9AD8;&#x9636;&#x51FD;&#x6570;" class="plugin-anchor" href="#&#x9AD8;&#x9636;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x9636;&#x51FD;&#x6570;</h1>
+<p>&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x662F;&#x53EF;&#x884C;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5728; Scala &#x4E2D;&#x51FD;&#x6570;&#x662F;&#x201C;&#x5934;&#x7B49;&#x516C;&#x6C11;&#x201D;&#x3002;&#x5173;&#x4E8E;&#x8FD9;&#x70B9;&#x5728;&#x672F;&#x8BED;&#x4E0A;&#x53EF;&#x80FD;&#x8BA9;&#x4EBA;&#x6709;&#x70B9;&#x56F0;&#x60D1;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x90A3;&#x4E9B;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x6216;&#x8005;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x51FD;&#x6570;&#x90FD;&#x79F0;&#x4E3A;&#x201C;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x201D;&#x3002;</p>
+<p>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x4F8B;&#x5B50;&#x4E4B;&#x4E00;&#x662F;&#x7528;&#x4E8E; Scala &#x4E2D;&#x96C6;&#x5408;&#x7684;&#x9AD8;&#x9636;&#x51FD;&#x6570; <code>map</code> &#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">val</span> salaries = <span class="hljs-type">Seq</span>(<span class="hljs-number">20000</span>, <span class="hljs-number">70000</span>, <span class="hljs-number">40000</span>)
+<span class="hljs-keyword">val</span> doubleSalary = (x: <span class="hljs-type">Int</span>) =&gt; x * <span class="hljs-number">2</span>
+<span class="hljs-keyword">val</span> newSalaries = salaries.map(doubleSalary) <span class="hljs-comment">// List(40000, 140000, 80000)</span>
+</code></pre>
+<p><code>doubleSalary</code> &#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x6536; <code>Int</code> &#x7C7B;&#x578B;&#x7684; <code>x</code> &#xFF0C;&#x8FD4;&#x56DE; <code>x*2</code> &#x7684;&#x51FD;&#x6570;&#x3002;&#x7BAD;&#x5934; <code>=&gt;</code> &#x5DE6;&#x4FA7;&#x7684;&#x5143;&#x7EC4;&#x662F;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF0C;&#x53F3;&#x4FA7;&#x662F;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x7B2C;&#x4E09;&#x884C;&#xFF0C;&#x51FD;&#x6570; <code>doubleSalary</code> &#x88AB;&#x5E94;&#x7528;&#x4E8E;&#x5217;&#x8868; <code>salaries</code> &#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x76F4;&#x63A5;&#x5C06;&#x5B83;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x7ED9; <code>map</code> &#xFF1A;</p>
+<pre><code>val salaries = Seq(20000, 70000, 40000)
+val newSalaries = salaries.map(x =&gt; x * 2) // List(40000, 140000, 80000)
+</code></pre><p>&#x6CE8;&#x610F;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5F53;&#x4E2D; <code>x</code> &#x5E76;&#x6CA1;&#x6709;&#x88AB;&#x58F0;&#x660E;&#x4E3A; <code>Int</code> &#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x51FD;&#x6570; <code>map</code> &#x9700;&#x8981;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x63A8;&#x65AD;&#x51FA;&#x5B83;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x66F4;&#x60EF;&#x7528;&#x7684;&#x5199;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">val</span> salaries = <span class="hljs-type">Seq</span>(<span class="hljs-number">20000</span>, <span class="hljs-number">70000</span>, <span class="hljs-number">40000</span>)
+<span class="hljs-keyword">val</span> newSalaries = salaries.map(_ * <span class="hljs-number">2</span>)
+</code></pre>
+<p>&#x7531;&#x4E8E; Scala &#x7F16;&#x8BD1;&#x5668;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x4E86;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x4E00;&#x4E2A; <code>Int</code> &#xFF09;&#xFF0C;&#x4F60;&#x4EC5;&#x4EC5;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x51FD;&#x6570;&#x7684;&#x53F3;&#x4FA7;&#x5373;&#x53EF;&#x3002;&#x552F;&#x4E00;&#x9700;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x8981;&#x7528; <code>_</code> &#x6765;&#x66FF;&#x4EE3;&#x53C2;&#x6570;&#x540D;&#xFF08;&#x5728;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x662F; <code>x</code> &#xFF09;&#x3002;</p>
+<h2 id="&#x65B9;&#x6CD5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;&#x51FD;&#x6570;"><a name="&#x65B9;&#x6CD5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;&#x51FD;&#x6570;" class="plugin-anchor" href="#&#x65B9;&#x6CD5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;&#x51FD;&#x6570;</h2>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x65B9;&#x6CD5;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A; Scala &#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x5C06;&#x65B9;&#x6CD5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code>case class WeeklyWeatherForecast(temperatures: Seq[Double]) {
+
+  private def convertCtoF(temp: Double) = temp * 1.8 + 32
+
+  def forecastInFahrenheit: Seq[Double] = temperatures.map(convertCtoF) // &lt;-- passing the method convertCtoF
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x7684;&#x65B9;&#x6CD5; <code>convertCtoF</code> &#x88AB;&#x4F20;&#x9012;&#x7ED9; <code>forecastInFahrenheit</code> &#x3002;&#x8FD9;&#x6837;&#x505A;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x4F1A;&#x5C06; <code>convertCtoF</code> &#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x6210;&#x51FD;&#x6570; <code>x =&gt; convertCtoF(x)</code> (&#x6CE8;&#xFF1A; <code>x</code> &#x662F;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x5176;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x4FDD;&#x8BC1;&#x4E86;&#x552F;&#x4E00;&#x6027;)&#x3002;</p>
+<h2 id="&#x63A5;&#x53D7;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;"><a name="&#x63A5;&#x53D7;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;" class="plugin-anchor" href="#&#x63A5;&#x53D7;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A5;&#x53D7;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;</h2>
+<p>&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x7684;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x7406;&#x7531;&#x662F;&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x5197;&#x4F59;&#x4EE3;&#x7801;&#x3002;&#x5047;&#x8BBE;&#x4F60;&#x60F3;&#x7528;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#x6765;&#x63D0;&#x9AD8;&#x67D0;&#x4EBA;&#x7684;&#x5DE5;&#x8D44;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x4E0D;&#x540C;&#x7684;&#x4E58;&#x6CD5;&#x56E0;&#x5B50;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x80FD;&#x8981;&#x8FD9;&#x6837;&#x6765;&#x5199;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">SalaryRaiser</span> </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">smallPromotion</span></span>(salaries: <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>]): <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>] =
+    salaries.map(salary =&gt; salary * <span class="hljs-number">1.1</span>)
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">greatPromotion</span></span>(salaries: <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>]): <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>] =
+    salaries.map(salary =&gt; salary * math.log(salary))
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hugePromotion</span></span>(salaries: <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>]): <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>] =
+    salaries.map(salary =&gt; salary * salary)
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x8FD9;3&#x4E2A;&#x65B9;&#x6CD5;&#x552F;&#x4E00;&#x7684;&#x4E0D;&#x540C;&#x5728;&#x4E8E;&#x4E58;&#x6CD5;&#x56E0;&#x5B50;&#x3002;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x4EE3;&#x7801;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x91CD;&#x590D;&#x7684;&#x4EE3;&#x7801;&#x63D0;&#x53D6;&#x5230;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x5F53;&#x4E2D;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">SalaryRaiser</span> </span>{
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">promotion</span></span>(salaries: <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>], promotionFunction: <span class="hljs-type">Double</span> =&gt; <span class="hljs-type">Double</span>): <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>] =
+    salaries.map(promotionFunction)
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">smallPromotion</span></span>(salaries: <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>]): <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>] =
+    promotion(salaries, salary =&gt; salary * <span class="hljs-number">1.1</span>)
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bigPromotion</span></span>(salaries: <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>]): <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>] =
+    promotion(salaries, salary =&gt; salary * math.log(salary))
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hugePromotion</span></span>(salaries: <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>]): <span class="hljs-type">List</span>[<span class="hljs-type">Double</span>] =
+    promotion(salaries, salary =&gt; salary * salary)
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x65B9;&#x6CD5; <code>promotion</code> &#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A; <code>Double =&gt; Double</code> &#xFF08;&#x5373;&#x63A5;&#x53D7;&#x4E00;&#x4E2A; Double &#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Double &#x7684;&#x51FD;&#x6570;&#xFF09;&#x7684;&#x52A0;&#x85AA;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x4E58;&#x79EF;&#x3002;</p>
+<h2 id="&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;"><a name="&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;" class="plugin-anchor" href="#&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;</h2>
+<p>&#x6709;&#x4E9B;&#x7279;&#x5B9A;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x5E0C;&#x671B;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">urlBuilder</span></span>(ssl: <span class="hljs-type">Boolean</span>, domainName: <span class="hljs-type">String</span>): (<span class="hljs-type">String</span>, <span class="hljs-type">String</span>) =&gt; <span class="hljs-type">String</span> = {
+  <span class="hljs-keyword">val</span> schema = <span class="hljs-keyword">if</span> (ssl) <span class="hljs-string">&quot;https://&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;http://&quot;</span>
+  (endpoint: <span class="hljs-type">String</span>, query: <span class="hljs-type">String</span>) =&gt; <span class="hljs-string">s&quot;<span class="hljs-subst">$schema</span><span class="hljs-subst">$domainName</span>/<span class="hljs-subst">$endpoint</span>?<span class="hljs-subst">$query</span>&quot;</span>
+}
+
+<span class="hljs-keyword">val</span> domainName = <span class="hljs-string">&quot;www.example.com&quot;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getURL</span> </span>= urlBuilder(ssl=<span class="hljs-literal">true</span>, domainName)
+<span class="hljs-keyword">val</span> endpoint = <span class="hljs-string">&quot;users&quot;</span>
+<span class="hljs-keyword">val</span> query = <span class="hljs-string">&quot;id=1&quot;</span>
+<span class="hljs-keyword">val</span> url = getURL(endpoint, query) <span class="hljs-comment">// &quot;https://www.example.com/users?id=1&quot;: String</span>
+</code></pre>
+<p>&#x6CE8;&#x610F; urlBuilder &#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x662F; <code>(String, String) =&gt; String</code> &#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x8FD4;&#x56DE;&#x7684;&#x533F;&#x540D;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x533F;&#x540D;&#x51FD;&#x6570;&#x662F; <code>(endpoint: String, query: String) =&gt; s&quot;https://www.example.com/$endpoint?$query&quot;</code> &#x3002;</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank"><img src="https://licensebuttons.net/l/by-sa/3.0/80x15.png" alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;"></a> BY <a href="http://www.luckypeng.com/" target="_blank">&#x5C0F;&#x9E4F;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;  2019-07-17 14:01:50 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mixin-class-composition.html" class="navigation navigation-prev " aria-label="Previous page: 6. 通过混入（mixin）来组合类">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="nested-method.html" class="navigation navigation-next " aria-label="Next page: 8. 嵌套方法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7. 高阶函数","level":"1.8","depth":1,"next":{"title":"8. 嵌套方法","level":"1.9","depth":1,"path":"nested-method.md","ref":"nested-method.md","articles":[]},"previous":{"title":"6. 通过混入（mixin）来组合类","level":"1.7","depth":1,"path":"mixin-class-composition.md","ref":"mixin-class-composition.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","cnzz","splitter","sitemap","page-footer-ex","theme-comscore","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/coalchan/Tour-of-Scala/"},"page-footer-ex":{"copyright":"[![知识共享许可协议](https://licensebuttons.net/l/by-sa/3.0/80x15.png)](https://creativecommons.org/licenses/by-sa/3.0/) BY [小鹏](http://www.luckypeng.com/)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于 "},"splitter":{},"search":{},"cnzz":{"style":"0","visible":true,"siteid":"1277827682"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://tour-of-scala.luckypeng.com/"},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala 之旅","language":"zh-hans","links":{"sidebar":{"博客":"https://blog.luckypeng.com","知乎":"https://www.zhihu.com/people/coalchan"}},"gitbook":"*","description":"Scala 基础入门"},"file":{"path":"higher-order-functions.md","mtime":"2019-07-17T06:01:50.342Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T08:03:28.371Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-cnzz/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,746 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>9. 多参数列表（柯里化） · Scala 之旅</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="case-classes.html" />
+    
+    
+    <link rel="prev" href="nested-method.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://blog.luckypeng.com" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.zhihu.com/people/coalchan" target="_blank" class="custom-link">知乎</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    本书介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="tour-of-scala.html">
+            
+                <a href="tour-of-scala.html">
+            
+                    
+                    1. 导言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="basics.html">
+            
+                <a href="basics.html">
+            
+                    
+                    2. 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="unified-types.html">
+            
+                <a href="unified-types.html">
+            
+                    
+                    3. 统一类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="classes.html">
+            
+                <a href="classes.html">
+            
+                    
+                    4. 类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="traits.html">
+            
+                <a href="traits.html">
+            
+                    
+                    5. 特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="mixin-class-composition.html">
+            
+                <a href="mixin-class-composition.html">
+            
+                    
+                    6. 通过混入（mixin）来组合类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="higher-order-functions.html">
+            
+                <a href="higher-order-functions.html">
+            
+                    
+                    7. 高阶函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="nested-method.html">
+            
+                <a href="nested-method.html">
+            
+                    
+                    8. 嵌套方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="multiple-parameter-lists.html">
+            
+                <a href="multiple-parameter-lists.html">
+            
+                    
+                    9. 多参数列表（柯里化）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="case-classes.html">
+            
+                <a href="case-classes.html">
+            
+                    
+                    10. 样例类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="pattern-matching.html">
+            
+                <a href="pattern-matching.html">
+            
+                    
+                    11. 模式匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="singleton-objects.html">
+            
+                <a href="singleton-objects.html">
+            
+                    
+                    12. 单例对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="regular-expression-patterns.html">
+            
+                <a href="regular-expression-patterns.html">
+            
+                    
+                    13. 正则表达式模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="extractor-objects.html">
+            
+                <a href="extractor-objects.html">
+            
+                    
+                    14. 提取器对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="for-comprehensions.html">
+            
+                <a href="for-comprehensions.html">
+            
+                    
+                    15. For 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="generic-classes.html">
+            
+                <a href="generic-classes.html">
+            
+                    
+                    16. 泛型类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="variances.html">
+            
+                <a href="variances.html">
+            
+                    
+                    17. 型变
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="upper-type-bounds.html">
+            
+                <a href="upper-type-bounds.html">
+            
+                    
+                    18. 类型上界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="lower-type-bounds.html">
+            
+                <a href="lower-type-bounds.html">
+            
+                    
+                    19. 类型下界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="inner-classes.html">
+            
+                <a href="inner-classes.html">
+            
+                    
+                    20. 内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="abstract-types.html">
+            
+                <a href="abstract-types.html">
+            
+                    
+                    21. 抽象类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="compound-types.html">
+            
+                <a href="compound-types.html">
+            
+                    
+                    22. 复合类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="self-types.html">
+            
+                <a href="self-types.html">
+            
+                    
+                    23. 自类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="implicit-parameters.html">
+            
+                <a href="implicit-parameters.html">
+            
+                    
+                    24. 隐式参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="implicit-conversions.html">
+            
+                <a href="implicit-conversions.html">
+            
+                    
+                    25. 隐式转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="polymorphic-methods.html">
+            
+                <a href="polymorphic-methods.html">
+            
+                    
+                    26. 多态方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="type-inference.html">
+            
+                <a href="type-inference.html">
+            
+                    
+                    27. 类型推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    28. 运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="by-name-parameters.html">
+            
+                <a href="by-name-parameters.html">
+            
+                    
+                    29. 传名参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="annotations.html">
+            
+                <a href="annotations.html">
+            
+                    
+                    30. 注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="default-parameter-values.html">
+            
+                <a href="default-parameter-values.html">
+            
+                    
+                    31. 默认参数值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="named-arguments.html">
+            
+                <a href="named-arguments.html">
+            
+                    
+                    32. 命名参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="packages-and-imports.html">
+            
+                <a href="packages-and-imports.html">
+            
+                    
+                    33. 包和导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >9. 多参数列表（柯里化）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF08;&#x67EF;&#x91CC;&#x5316;&#xFF09;"><a name="&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF08;&#x67EF;&#x91CC;&#x5316;&#xFF09;" class="plugin-anchor" href="#&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF08;&#x67EF;&#x91CC;&#x5316;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF08;&#x67EF;&#x91CC;&#x5316;&#xFF09;</h1>
+<p>&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#x3002;&#x5F53;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x4E0D;&#x5168;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#x7684;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5E76;&#x5C06;&#x7F3A;&#x5C11;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x6709;&#x4E2A;&#x6B63;&#x5F0F;&#x5B9A;&#x4E49;&#x53EB;<a href="https://en.wikipedia.org/wiki/Currying" target="_blank">&#x67EF;&#x91CC;&#x5316;</a>&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5B9A;&#x4E49;&#x5728; Scala &#x96C6;&#x5408;&#x4E2D;&#x7684; <a href="https://docs.scala-lang.org/zh-cn/overviews/collections/trait-traversable.html" target="_blank">Traversable</a> &#x7279;&#x8D28;&#x5F53;&#x4E2D;&#xFF1A;</p>
+<pre><code>def foldLeft[B](z: B)(op: (B, A) =&gt; B): B
+</code></pre><p><code>foldLeft</code>&#x6309;&#x7167;&#x4ECE;&#x5DE6;&#x5F80;&#x53F3;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5C06;&#x4E8C;&#x8FDB;&#x5236;&#x8FD0;&#x7B97;&#x7B26; <code>op</code> &#x4F5C;&#x7528;&#x4E8E;&#x521D;&#x59CB;&#x503C; <code>z</code> &#x548C;&#x8FD9;&#x4E2A; <code>traversable</code> &#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x3002;&#x4E0B;&#x9762;&#x5C55;&#x793A;&#x4E86;&#x5B83;&#x7684;&#x7528;&#x6CD5;&#x3002;</p>
+<p>&#x4ECE;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x503C;0&#x5F00;&#x59CB;&#xFF0C;<code>foldleft</code> &#x5C06;&#x51FD;&#x6570; <code>(m, n) =&gt; m + n</code> &#x4F5C;&#x7528;&#x4E8E;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x548C;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x7D2F;&#x8BA1;&#x503C;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">val</span> numbers = <span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>)
+<span class="hljs-keyword">val</span> res = numbers.foldLeft(<span class="hljs-number">0</span>)((m, n) =&gt; m + n)
+print(res) <span class="hljs-comment">// 55</span>
+</code></pre>
+<p>&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#x5177;&#x6709;&#x6BD4;&#x8F83;&#x5197;&#x957F;&#x7684;&#x8C03;&#x7528;&#x8BED;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x8981;&#x8C28;&#x614E;&#x4F7F;&#x7528;&#x3002;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7684;&#x573A;&#x666F;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#xFF1A;</p>
+<h4 id="&#x5355;&#x4E2A;&#x51FD;&#x6570;&#x53C2;&#x6570;"><a name="&#x5355;&#x4E2A;&#x51FD;&#x6570;&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x5355;&#x4E2A;&#x51FD;&#x6570;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5355;&#x4E2A;&#x51FD;&#x6570;&#x53C2;&#x6570;</h4>
+<p>&#x5728;&#x5355;&#x4E2A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x573A;&#x666F;&#xFF08;&#x5982;&#x4E0A;&#x9762; <code>foldleft</code> &#x4E2D;&#x7684; <code>op</code>&#xFF09;&#x4E2D;&#xFF0C;&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x7B80;&#x6D01;&#x7684;&#x8BED;&#x6CD5;&#x5C06;&#x533F;&#x540D;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x65B9;&#x6CD5;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF0C;&#x4EE3;&#x7801;&#x5C06;&#x4F1A;&#x662F;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code>numbers.foldLeft(0, {(m: Int, n: Int) =&gt; m + n})
+</code></pre><p>&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#x7684;&#x7528;&#x6CD5;&#x8FD8;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x5229;&#x7528; Scala &#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x6765;&#x8BA9;&#x4EE3;&#x7801;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x7B80;&#x6D01;&#xFF0C;&#x8FD9;&#x5728;&#x4E0D;&#x7528;&#x67EF;&#x91CC;&#x5316;&#x6765;&#x5B9A;&#x4E49;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x505A;&#x4E0D;&#x5230;&#x7684;&#x3002;</p>
+<pre><code>numbers.foldLeft(0)(_ + _)
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x8BED;&#x53E5; <code>numbers.foldLeft(0)(_ + _)</code> &#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x56FA;&#x5B9A;&#x53C2;&#x6570; <code>z</code>&#xFF0C;&#x7136;&#x540E;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x504F;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x4F7F;&#x7528;&#xFF0C;&#x6B63;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">val</span> numbers = <span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>)
+<span class="hljs-keyword">val</span> numberFunc = numbers.foldLeft(<span class="hljs-type">List</span>[<span class="hljs-type">Int</span>]())_
+
+<span class="hljs-keyword">val</span> squares = numberFunc((xs, x) =&gt; xs:+ x*x)
+print(squares.toString()) <span class="hljs-comment">// List(1, 4, 9, 16, 25, 36, 49, 64, 81, 100)</span>
+
+<span class="hljs-keyword">val</span> cubes = numberFunc((xs, x) =&gt; xs:+ x*x*x)
+print(cubes.toString())  <span class="hljs-comment">// List(1, 8, 27, 64, 125, 216, 343, 512, 729, 1000)</span>
+</code></pre>
+<p>&#x6700;&#x540E;&#x8BF4;&#x4E0B;&#xFF0C;<code>foldLeft</code> &#x548C; <code>foldRight</code> &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x4EFB;&#x610F;&#x4E00;&#x79CD;&#x7528;&#x6CD5;&#x6765;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">val</span> numbers = <span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>)
+
+numbers.foldLeft(<span class="hljs-number">0</span>)((sum, item) =&gt; sum + item) <span class="hljs-comment">// Generic Form</span>
+numbers.foldRight(<span class="hljs-number">0</span>)((sum, item) =&gt; sum + item) <span class="hljs-comment">// Generic Form</span>
+
+numbers.foldLeft(<span class="hljs-number">0</span>)(_+_) <span class="hljs-comment">// Curried Form</span>
+numbers.foldRight(<span class="hljs-number">0</span>)(_+_) <span class="hljs-comment">// Curried Form</span>
+
+(<span class="hljs-number">0</span> /: numbers)(_+_) <span class="hljs-comment">// Used in place of foldLeft</span>
+(numbers :\ <span class="hljs-number">0</span>)(_+_) <span class="hljs-comment">// Used in place of foldRight</span>
+</code></pre>
+<h4 id="&#x9690;&#x5F0F;&#x53C2;&#x6570;"><a name="&#x9690;&#x5F0F;&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x9690;&#x5F0F;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9690;&#x5F0F;&#x53C2;&#x6570;</h4>
+<p>&#x5982;&#x679C;&#x8981;&#x5C06;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x67D0;&#x4E9B;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4E3A; <code>implicit</code>&#xFF0C;&#x5219;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x591A;&#x53C2;&#x6570;&#x5217;&#x8868;&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">execute</span></span>(arg: <span class="hljs-type">Int</span>)(<span class="hljs-keyword">implicit</span> ec: <span class="hljs-type">ExecutionContext</span>) = ???
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank"><img src="https://licensebuttons.net/l/by-sa/3.0/80x15.png" alt="&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;"></a> BY <a href="http://www.luckypeng.com/" target="_blank">&#x5C0F;&#x9E4F;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;  2019-07-17 14:20:11 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="nested-method.html" class="navigation navigation-prev " aria-label="Previous page: 8. 嵌套方法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="case-classes.html" class="navigation navigation-next " aria-label="Next page: 10. 样例类">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"9. 多参数列表（柯里化）","level":"1.10","depth":1,"next":{"title":"10. 样例类","level":"1.11","depth":1,"path":"case-classes.md","ref":"case-classes.md","articles":[]},"previous":{"title":"8. 嵌套方法","level":"1.9","depth":1,"path":"nested-method.md","ref":"nested-method.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","cnzz","splitter","sitemap","page-footer-ex","theme-comscore","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/coalchan/Tour-of-Scala/"},"page-footer-ex":{"copyright":"[![知识共享许可协议](https://licensebuttons.net/l/by-sa/3.0/80x15.png)](https://creativecommons.org/licenses/by-sa/3.0/) BY [小鹏](http://www.luckypeng.com/)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于 "},"splitter":{},"search":{},"cnzz":{"style":"0","visible":true,"siteid":"1277827682"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://tour-of-scala.luckypeng.com/"},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala 之旅","language":"zh-hans","links":{"sidebar":{"博客":"https://blog.luckypeng.com","知乎":"https://www.zhihu.com/people/coalchan"}},"gitbook":"*","description":"Scala 基础入门"},"file":{"path":"multiple-parameter-lists.md","mtime":"2019-07-17T06:20:11.451Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T08:03:28.371Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-cnzz/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
